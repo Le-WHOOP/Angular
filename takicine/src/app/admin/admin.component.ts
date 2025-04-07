@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { ChartsComponent } from "./charts/charts.component";
 import { MoviesService } from '../services/movies.service';
 import { UsersService } from '../services/users.service';
+import { ReviewsService } from '../services/reviews.service';
 
 @Component({
   selector: 'app-admin',
@@ -14,6 +15,7 @@ import { UsersService } from '../services/users.service';
 export class AdminComponent {
   private readonly moviesService = inject(MoviesService);
   private readonly usersService = inject(UsersService);
+  private readonly reviewsService = inject(ReviewsService);
   ratings: number = 0;
   users: number = 0;
   movies: number = 0;
@@ -22,9 +24,12 @@ export class AdminComponent {
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe(movies => this.movies = movies.length);
     this.usersService.getUsers().subscribe(users => this.users = users.length);
-
-    if (this.ratings !== 0) {
-      this.satisfaction = 0 /** TODO */ / this.ratings * 100;
-    }
+    this.reviewsService.getReviews().subscribe(reviews => {
+      this.ratings = reviews.length;
+      if (this.ratings !== 0) {
+        this.satisfaction = reviews.reduce((acc, review) => acc + review.rate, 0);
+        this.satisfaction = Math.round((this.satisfaction / 5) / this.ratings * 100);
+      }
+    });
   }
 }

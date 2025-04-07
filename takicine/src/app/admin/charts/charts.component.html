@@ -2,11 +2,14 @@
 <br>
 <div class="row w-100 mx-auto">
     <div class="col-6">
-        <canvas style="display: block; box-sizing: border-box; height: 166px; width: 332px;" height="207" width="430"></canvas>
+        <canvas style="display: block; box-sizing: border-box; height: 166px; width: 332px;" height="207" width="430" id="chart1">{{chart1}}</canvas>
     </div>
     <div class="col-6">
-        <select class="ng-valid ng-dirty ng-touched">
-
+        <select class="ng-valid ng-dirty ng-touched" (change)="onYearChange($event)">
+            @for (year of years; track year) {
+                <option [value]="year">{{year}}</option>
+            }
         </select>
+        <canvas style="box-sizing: border-box; display: block; height: 172px; width: 344px;" height="430" width="215" id="chart2">{{chart2}}</canvas>
     </div>
 </div>
