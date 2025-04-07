@@ -26,5 +26,6 @@ export const routes: Routes = [
     { path: 'list-avis', component: ListReviewsComponent },
     { path: 'add-avis', component: AddAvisComponent},
     { path: 'edit-avis/:id', component: EditAvisComponent},
-    { path: 'panel-admin', component: AdminComponent }
+    { path: 'panel-admin', component: AdminComponent },
+    { path: 'avis-film/:id', component: AvisFilmComponent}
 ];

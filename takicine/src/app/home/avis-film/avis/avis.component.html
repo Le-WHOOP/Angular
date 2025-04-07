@@ -1,0 +1,18 @@
+<div class="border mb-3 card">
+    <div class="row d-flex truc">
+        <div class="col-md-4 d-flex flex-column card-component">
+            <div class="rating-box">
+                <h1 class="pt-4">{{review.rate}}</h1>
+                <p>sur 5</p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{review.user.firstName}} {{review.user.lastName}}</h5>
+                <p class="card-text">{{review.text}}</p>
+                <small class="card-text text-muted">{{review.reviewDate | date: "dd/MM/yyyy"}}</small>
+            </div>
+        </div>
+    </div>
+
+</div>

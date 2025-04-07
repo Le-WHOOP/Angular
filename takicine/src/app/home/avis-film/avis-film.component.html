@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row text-center justify-content-center align-items-center">
+        <h3>Tous ses avis</h3>
+        <p>Pour te donner envie</p>
+        <br/>
+        
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12 tex-center mb-5">
+            @for (review of reviews; track review.id) {
+                <app-avis [review]="review"></app-avis>
+            }
+        </div>
+    </div>
+</div>
