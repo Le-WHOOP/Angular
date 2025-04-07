@@ -16,7 +16,7 @@ export class ReviewsComponent {
   @Input({required: true}) userId! : number;
 
   constructor (private route: ActivatedRoute) {
-  
+
   }
 
   private readonly reviewsService = inject(ReviewService);
@@ -25,10 +25,10 @@ export class ReviewsComponent {
         this.userId = parseInt(this.route.snapshot.paramMap.get('id')!);
         this.reviewsService.getReviews().subscribe(reviews => this.reviews = reviews.filter(r => r.user.id == this.userId));
     }
-    
-    private destroyRef = inject(DestroyRef)    
+
+    private destroyRef = inject(DestroyRef)
     deleteReview(id: number): void {
-        this.reviewsService.deleteReview(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => 
+        this.reviewsService.deleteReview(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() =>
             this.reviews = this.reviews.filter(review => review.id !== id)
         );
     }
