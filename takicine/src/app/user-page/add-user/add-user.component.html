@@ -1,0 +1,32 @@
+<h1 class="mb-2 mx-2">{{ pageTitle }}</h1>
+<h4 class="mb-2 mx-2"><i>Et rejoins une vraie communauté.</i></h4>
+
+<div class="d-flex flex-column mx-2">
+    <label for="title">Prénom</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" />
+    <div *ngIf="failFirstName" class="text-danger">
+        Le prénom doit faire au moins un caractère
+    </div>
+
+    <label for="title">Nom de famille</label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" />
+    <div *ngIf="failLastName" class="text-danger">
+        Le nom de famille doit faire au moins un caractère
+    </div>
+
+    <label for="title">Age</label>
+    <input type="number" id="age" name="age" [(ngModel)]="user.age" />
+    <div *ngIf="failAge" class="text-danger">
+        L'âge doit être strictement positif
+    </div>
+
+    <label for="title">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="user.email" />
+    <div *ngIf="failEmail" class="text-danger">
+        L'email n'a pas le bon format
+    </div>
+</div>
+
+<div class="mt-2 text-center">
+    <button class="btn btn-primary" (click)=confirm()>{{ buttonTitle }}</button>
+</div>

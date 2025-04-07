@@ -1,0 +1,25 @@
+<h1 class="mb-2 mx-2">Mon profil</h1>
+
+<div class="mb-2 mx-2">
+    <a routerLink="/add-avis" type="button" class="btn btn-primary mx-2" role="button">Nouvel avis</a>
+    <a [routerLink]="'/list-avis/' + user.id!" type="button" class="btn btn-outline-primary mx-2" role="button">Modifier mes
+        avis</a>
+    <a [routerLink]="'/add-user/' + user.id!" type="button" class="btn btn-secondary mx-2" role="button">Modifier mes
+        infos</a>
+    <button type="button" class="btn btn-danger mx-2" (click)="logout()">Déconnexion</button>
+</div>
+
+<br>
+
+<ul class="mb-2 mx-2">
+    <h2>Mes infos :</h2>
+    <li>
+        <p>Nom : <b>{{ user.lastName }}</b> Prénom : <b>{{ user.firstName }}</b></p>
+    </li>
+    <li>
+        <p>Age : <b>{{ user.age }}</b> Email : <b>{{ user.email }}</b></p>
+    </li>
+    <li>
+        <p>Points fidelité : <b>{{ user.points }}</b></p>
+    </li>
+</ul>

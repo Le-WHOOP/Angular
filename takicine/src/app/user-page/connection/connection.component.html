@@ -1,0 +1,15 @@
+<h1 class="mb-2 mx-2">Connecte-toi !</h1>
+<h4 class="mb-2 mx-2">En 1 clic.</h4>
+
+<div class="d-flex flex-column mx-2">
+    <label for="title">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" [(ngModel)]="email" />
+    <div *ngIf="failEmail" class="text-danger">
+        Email incorrect
+    </div>
+</div>
+
+<div class="mt-2 text-center">
+    <button class="btn btn-primary" (click)=login()>Se connecter</button>
+    <p>Pas de compte ? <a routerLink="/add-user">Inscris-toi !</a></p>
+</div>

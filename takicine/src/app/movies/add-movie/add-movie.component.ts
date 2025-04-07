@@ -1,10 +1,10 @@
-import { Component, Inject, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { Movie } from '../../models/movie';
 import { Observable } from 'rxjs';
+import { Movie } from '../../models/movie';
 import { MoviesService } from '../../services/movies.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-movie',
