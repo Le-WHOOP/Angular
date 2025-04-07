@@ -18,7 +18,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './add-avis.component.scss'
 })
 export class AddAvisComponent {
-  @Input({required: true}) userId! : number;
  
   private readonly reviewsService = inject(ReviewsService);
       movies$: Observable<Review[]> = this.reviewsService.getReviews();
@@ -31,9 +30,15 @@ export class AddAvisComponent {
   movies: Movie[] = [];
   movie?: Movie = undefined;
   ngOnInit(): void {
-    this.userId=1; // TODO remove
+    const email = localStorage.getItem('user');
+    if (email == null) {
+      this.router.navigate(['/connection']);
+    }
 
-      this.usersService.getUser(this.userId).subscribe(user => this.user = user);
+    this.usersService.getUserByEmail(email!).subscribe(user => {
+      this.user = user;
+    });
+      // this.usersService.getUser(this.userId).subscribe(user => this.user = user);
       this.moviesService.getMovies().subscribe(movies => this.movies = movies);
   }
     failTexte: boolean = false;
@@ -51,7 +56,7 @@ export class AddAvisComponent {
       if (this.isInputValid()) {
         this.review.user = this.user!;
         this.reviewsService.addReview(this.review).subscribe(
-            () => this.router.navigate([`/list-avis/${this.userId}`])
+            () => this.router.navigate([`/list-avis/${this.user!.id}`])
         );
       }
    }
