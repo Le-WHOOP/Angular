@@ -5,6 +5,7 @@ import { Movie } from '../../models/movie';
 import { Observable } from 'rxjs';
 import { MoviesService } from '../../services/movies.service';
 import { CommonModule, DatePipe } from '@angular/common';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-edit-movie',
@@ -16,6 +17,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 export class EditMovieComponent {
   @Input({required: true}) id! : number;
 
+  private readonly toastService = inject(ToastService);
   private readonly moviesService = inject(MoviesService);
   private readonly router = inject(Router);
 
@@ -43,9 +45,10 @@ export class EditMovieComponent {
   
     editMovie(): void {
       if (this.isInputValid()) {
-        this.moviesService.editMovie(this.movie).subscribe(
-            () => this.router.navigate(['/movies'])
-        );
+        this.moviesService.editMovie(this.movie).subscribe(() => {
+                //this.router.navigate(['/movies']);
+                this.toastService.add("test");
+        });
       }
    }
 
