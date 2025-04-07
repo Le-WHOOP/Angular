@@ -6,7 +6,7 @@ import { Movie } from '../models/movie';
 @Injectable({
   providedIn: 'root'
 })
-export class MoviesService {
+export class MovieService {
   
   private readonly httpClient = inject(HttpClient)
   private readonly url = "http://localhost:8080/movies"

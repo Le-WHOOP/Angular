@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MoviesService } from '../services/movies.service';
+import { MovieService } from '../services/movie.service';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
 import { AsyncPipe, DatePipe } from '@angular/common';
@@ -13,6 +13,6 @@ import { MovieComponent } from './movie/movie.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  private readonly moviesService = inject(MoviesService);
+  private readonly moviesService = inject(MovieService);
   movies$: Observable<Movie[]> = this.moviesService.getMovies();
 }

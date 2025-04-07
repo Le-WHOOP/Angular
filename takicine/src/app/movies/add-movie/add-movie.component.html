@@ -8,7 +8,7 @@
     <form ngNativeValidate>
         <div class="form-group">
             <label for="title">Titre</label>
-            <input type="text" id="title" name="title" class="form-control" [(ng    Model)]="movie.title" required/>
+            <input type="text" id="title" name="title" class="form-control" [(ngModel)]="movie.title" required/>
             <div *ngIf="failTitle" class="text-danger">
                 Le titre doit être en majuscules
             </div>
@@ -36,8 +36,8 @@
             <div *ngIf="failSynopsis" class="text-danger    ">
                 Le synopsis doit faire au moins 30 charactères
             </div>
-        </div>    
-        
+        </div>
+
 
         <br />
         <button class="btn btn-warning" (click)=addMovie()>Ajouter</button>
