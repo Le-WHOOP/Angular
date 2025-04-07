@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row first-line">
+        <div class="col-9">
+            <div class="row mx-auto">
+                <div class="col text-center figures mr-1">
+                    <h1>
+                        Nombre de <strong>films</strong>
+                    </h1>
+                    <h1 class="display-1">
+                        <strong>{{movies}}</strong>
+                    </h1>
+                </div>
+                <div class="col text-center figures ml-1">
+                    <h1>
+                        Nombre <strong>d'utilisateurs</strong>
+                    </h1>
+                    <h1 class="display-1">
+                        <strong>{{users}}</strong>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 buttons">
+            <a class="btn btn-warning btn-lg" routerLink="/movies">Les films</a>
+            <a class="btn btn-secondary btn-lg" routerLink="/list-users">Les utilisateurs</a>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-9">
+            <div class="row mx-auto">
+                <div class="col text-center figures mr-1">
+                    <h1>
+                        Nombre d'<strong>avis</strong>
+                    </h1>
+                    <h1 class="display-1">
+                        <strong>{{ratings}}</strong>
+                    </h1>
+                </div>
+                <div class="col text-center figures ml-1">
+                    <h1>
+                        Satisfaction: <strong>{{satisfaction}}% </strong>
+                    </h1>
+                    <h1 class="display-1">
+                        @if (satisfaction <= 33) {
+                            <i class="bi bi-emoji-frown-fill"></i>
+                        }
+                        @else if (satisfaction <= 66) {
+                            <i class="bi bi-emoji-neutral-fill"></i>
+                        }
+                        @else {
+                            <i class="bi bi-emoji-smile-fill"></i>
+                        }
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 buttons">
+            <a class="btn btn-outline-warning btn-lg" routerLink="/list-avis">Les avis</a>
+        </div>
+    </div>
+    <app-charts class="row mt-2 w-100 mx-auto"></app-charts>
+</div>
