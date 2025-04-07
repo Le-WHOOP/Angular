@@ -6,6 +6,7 @@ import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { AddAvisComponent } from './reviews/add-avis/add-avis.component';
 import { EditAvisComponent } from './reviews/edit-avis/edit-avis.component';
+import { AvisFilmComponent } from './home/avis-film/avis-film.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'edit-movie/:id', component: EditMovieComponent},
     { path: 'list-avis/:id', component: ReviewsComponent},
     { path: 'add-avis', component: AddAvisComponent},
-    { path: 'edit-avis/:id', component: EditAvisComponent}
+    { path: 'edit-avis/:id', component: EditAvisComponent},
+    { path: 'avis-film/:id', component: AvisFilmComponent}
 ];

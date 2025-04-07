@@ -7,7 +7,10 @@
       <h5 class="card-text">{{movie.director}}</h5>
       <h6 class="card-text">{{movie.releaseDate | date}}</h6>
       <p class="card-text">{{movie.synopsis}}</p>
-      <label class="note">Note: {{movie.rate}}</label>
+      <span>
+        <a class="btn btn-warning" [routerLink]="'avis-film/' + movie.id">Voir ses avis</a>
+        <label class="note mx-3">Note: {{movie.rate}}</label>
+      </span>
     </div>
   </div>
   
