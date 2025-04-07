@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Movie } from '../../models/movie';
-import { MoviesService } from '../../services/movies.service';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-add-movie',
@@ -14,7 +14,7 @@ import { MoviesService } from '../../services/movies.service';
   styleUrl: './add-movie.component.scss'
 })
 export class AddMovieComponent {
-  private readonly moviesService = inject(MoviesService);
+  private readonly moviesService = inject(MovieService);
     movies$: Observable<Movie[]> = this.moviesService.getMovies();
   private readonly router = inject(Router);
 

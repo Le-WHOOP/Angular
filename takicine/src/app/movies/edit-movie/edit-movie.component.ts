@@ -3,7 +3,7 @@ import { FormControl, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Movie } from '../../models/movie';
 import { Observable } from 'rxjs';
-import { MoviesService } from '../../services/movies.service';
+import { MovieService } from '../../services/movie.service';
 import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
@@ -16,7 +16,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 export class EditMovieComponent {
   @Input({required: true}) id! : number;
 
-  private readonly moviesService = inject(MoviesService);
+  private readonly moviesService = inject(MovieService);
   private readonly router = inject(Router);
 
   failSynopsis: boolean = false;

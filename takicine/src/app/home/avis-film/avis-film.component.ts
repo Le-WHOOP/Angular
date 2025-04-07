@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { Review } from '../../models/review';
 import { ActivatedRoute } from '@angular/router';
-import { ReviewsService } from '../../services/reviews.service';
+import { ReviewService } from '../../services/review.service';
 import { AvisComponent } from './avis/avis.component';
 
 @Component({
@@ -15,7 +15,7 @@ export class AvisFilmComponent {
     @Input({ required: true }) movieId! : number
     reviews: Review[] = []
 
-  private readonly reviewsService = inject(ReviewsService);
+  private readonly reviewsService = inject(ReviewService);
 
     constructor (private route: ActivatedRoute) {
     

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UsersService } from '../../services/users.service';
+import { UserService } from '../../services/user.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { User } from '../../models/user';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './add-user.component.scss',
 })
 export class AddUserComponent implements OnInit {
-  private readonly usersService = inject(UsersService);
+  private readonly usersService = inject(UserService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
 

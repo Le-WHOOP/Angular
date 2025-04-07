@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ChartsComponent } from "./charts/charts.component";
-import { MoviesService } from '../services/movies.service';
-import { UsersService } from '../services/users.service';
-import { ReviewsService } from '../services/reviews.service';
+import { MovieService } from '../services/movie.service';
+import { UserService } from '../services/user.service';
+import { ReviewService } from '../services/review.service';
 
 @Component({
   selector: 'app-admin',
@@ -13,9 +13,9 @@ import { ReviewsService } from '../services/reviews.service';
   styleUrl: './admin.component.scss'
 })
 export class AdminComponent {
-  private readonly moviesService = inject(MoviesService);
-  private readonly usersService = inject(UsersService);
-  private readonly reviewsService = inject(ReviewsService);
+  private readonly moviesService = inject(MovieService);
+  private readonly usersService = inject(UserService);
+  private readonly reviewsService = inject(ReviewService);
   ratings: number = 0;
   users: number = 0;
   movies: number = 0;

@@ -1,5 +1,5 @@
 import { Component, DestroyRef, inject, Input } from '@angular/core';
-import { ReviewsService } from '../services/reviews.service';
+import { ReviewService } from '../services/review.service';
 import { Review } from '../models/review';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DatePipe } from '@angular/common';
@@ -19,7 +19,7 @@ export class ReviewsComponent {
   
   }
 
-  private readonly reviewsService = inject(ReviewsService);
+  private readonly reviewsService = inject(ReviewService);
     reviews: Review[] = [];
     ngOnInit(): void {
         this.userId = parseInt(this.route.snapshot.paramMap.get('id')!);

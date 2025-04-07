@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { UsersService } from '../services/users.service';
+import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
 @Component({
@@ -13,7 +13,7 @@ import { User } from '../models/user';
   styleUrl: './user-page.component.scss',
 })
 export class UserPageComponent implements OnInit {
-  private readonly usersService = inject(UsersService);
+  private readonly usersService = inject(UserService);
   private readonly router = inject(Router);
 
   email: string = '';

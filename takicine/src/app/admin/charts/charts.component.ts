@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { ReviewsService } from '../../services/reviews.service';
+import { ReviewService } from '../../services/review.service';
 import { Review } from '../../models/review';
 import { Chart } from 'chart.js/auto';
 import { Movie } from '../../models/movie';
-import { MoviesService } from '../../services/movies.service';
+import { MovieService } from '../../services/movie.service';
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -14,8 +14,8 @@ import { forkJoin } from 'rxjs';
   styleUrl: './charts.component.scss'
 })
 export class ChartsComponent {
-  private readonly reviewsService = inject(ReviewsService);
-  private readonly moviesService = inject(MoviesService);
+  private readonly reviewsService = inject(ReviewService);
+  private readonly moviesService = inject(MovieService);
   years: number[] = [];
   movies: string[] = [];
   reviewsCountByMovie: number[] = [];

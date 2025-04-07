@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
-import { ReviewsService } from '../../services/reviews.service';
+import { ReviewService } from '../../services/review.service';
 import { Observable } from 'rxjs';
 import { Review } from '../../models/review';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { UsersService } from '../../services/users.service';
-import { MoviesService } from '../../services/movies.service';
+import { UserService } from '../../services/user.service';
+import { MovieService } from '../../services/movie.service';
 import { User } from '../../models/user';
 import { Movie } from '../../models/movie';
 import { FormsModule } from '@angular/forms';
@@ -24,12 +24,12 @@ export class EditAvisComponent {
   
   }
 
-    private readonly reviewsService = inject(ReviewsService);
+    private readonly reviewsService = inject(ReviewService);
         movies$: Observable<Review[]> = this.reviewsService.getReviews();
       private readonly router = inject(Router);
       
-    private readonly usersService = inject(UsersService);
-    private readonly moviesService = inject(MoviesService);
+    private readonly usersService = inject(UserService);
+    private readonly moviesService = inject(MovieService);
   
     user?: User = undefined;
     movies: Movie[] = [];

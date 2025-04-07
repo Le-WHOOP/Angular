@@ -1,12 +1,12 @@
 import { Component, inject, Input, input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ReviewsService } from '../../services/reviews.service';
+import { ReviewService } from '../../services/review.service';
 import { Router, RouterLink } from '@angular/router';
 import { Review } from '../../models/review';
-import { UsersService } from '../../services/users.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { Movie } from '../../models/movie';
-import { MoviesService } from '../../services/movies.service';
+import { MovieService } from '../../services/movie.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -20,12 +20,12 @@ import { CommonModule } from '@angular/common';
 export class AddAvisComponent {
   @Input({required: true}) userId! : number;
  
-  private readonly reviewsService = inject(ReviewsService);
+  private readonly reviewsService = inject(ReviewService);
       movies$: Observable<Review[]> = this.reviewsService.getReviews();
     private readonly router = inject(Router);
     
-  private readonly usersService = inject(UsersService);
-  private readonly moviesService = inject(MoviesService);
+  private readonly usersService = inject(UserService);
+  private readonly moviesService = inject(MovieService);
 
   user?: User = undefined;
   movies: Movie[] = [];

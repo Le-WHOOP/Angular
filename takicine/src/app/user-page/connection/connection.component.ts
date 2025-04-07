@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { UsersService } from '../../services/users.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-connection',
@@ -12,7 +12,7 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './connection.component.scss',
 })
 export class ConnectionComponent {
-  private readonly usersService = inject(UsersService);
+  private readonly usersService = inject(UserService);
   private readonly router = inject(Router);
 
   failEmail: boolean = false;

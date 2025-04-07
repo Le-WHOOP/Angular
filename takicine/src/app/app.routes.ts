@@ -11,19 +11,21 @@ import { AddUserComponent } from './user-page/add-user/add-user.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ConnectionComponent } from './user-page/connection/connection.component';
 import { AvisFilmComponent } from './home/avis-film/avis-film.component';
+import { UsersComponent } from './users/users.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent},
-    { path: 'add-user', component: AddUserComponent},
-    { path: 'add-user/:userId', component: AddUserComponent},
-    { path: 'user-page', component: UserPageComponent},
-    { path: 'connection', component: ConnectionComponent},
-    { path: 'movies', component: MoviesComponent},
-    { path: 'add-movie', component: AddMovieComponent},
-    { path: 'edit-movie/:id', component: EditMovieComponent},
-    { path: 'list-avis/:id', component: ReviewsComponent},
-    { path: 'add-avis', component: AddAvisComponent},
-    { path: 'edit-avis/:id', component: EditAvisComponent},
-    { path: 'panel-admin', component: AdminComponent },
-    { path: 'avis-film/:id', component: AvisFilmComponent}
+    { path: '', component: HomeComponent },
+    { path: 'users', component: UsersComponent },
+    { path: 'add-user', component: AddUserComponent },
+    { path: 'add-user/:userId', component: AddUserComponent },
+    { path: 'user-page', component: UserPageComponent },
+    { path: 'connection', component: ConnectionComponent },
+    { path: 'movies', component: MoviesComponent },
+    { path: 'add-movie', component: AddMovieComponent },
+    { path: 'edit-movie/:id', component: EditMovieComponent },
+    { path: 'list-avis/:id', component: ReviewsComponent },
+    { path: 'add-avis', component: AddAvisComponent },
+    { path: 'edit-avis/:id', component: EditAvisComponent },
+    { path: 'panel-admin', component: AdminComponent  },
+    { path: 'avis-film/:id', component: AvisFilmComponent },
 ];
