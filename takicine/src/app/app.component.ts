@@ -13,4 +13,13 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'takicine';
+  constructor(
+
+    private toastService: ToastService,
+    private vcr: ViewContainerRef
+  ) {
+    this.toastService.vcr = vcr;
+  }
+    this.toastService.show('Operation successful!', 'success');
+    this.toastService.show('Something went wrong!', 'error');
 }
