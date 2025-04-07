@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="d-flex align-items-center mt-3">
+        <h1 class="mr-4">Les avis</h1>
+        <select class="ng-pristine ng-valid ng-touched" (change)="onYearChange($event)">
+            <option value="0">Tous</option>
+            @for (year of years; track year) {
+                <option [value]="year">{{year}}</option>
+            }
+        </select>
+        <button class="btn btn-secondary ml-3">Export CSV</button>
+        <a class="btn btn-warning ml-3" routerLink="/panel-admin">Retour</a>
+    </div>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Note</th>
+                <th scope="col">Texte</th>
+                <th scope="col">Email utilisateur</th>
+                <th scope="col">Titre film</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (review of reviews; track review.id) {
+                <tr>
+                    <td>{{review.id}}</td>
+                    <td>{{review.rate}}</td>
+                    <td>{{review.text}}</td>
+                    <td>{{review.user.email}}</td>
+                    <td>{{review.movie.title}}</td>
+                    <td>{{review.reviewDate | date}}</td>
+                    <td class="d-flex justify-content-around">
+                        <button class="btn btn-danger deleteButton" type="button" (click)="deleteReview(review.id!)"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
