@@ -1,0 +1,32 @@
+.rating-box {
+    width: 130px;
+    height: 130px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fbc02d;
+    color: #fff;
+}
+
+.card {
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 30px;
+    padding: 30px 60px;
+}
+
+.card-component {
+    flex-direction: column;
+}
+
+.truc {
+    justify-content: left; 
+}
+
+@media (max-width: 600px) {
+    .card-component {
+        flex-direction: row;
+    }
+    .truc {
+        justify-content: center;
+    }
+}

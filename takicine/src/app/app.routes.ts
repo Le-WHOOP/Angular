@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AddUserComponent } from './user-page/add-user/add-user.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ConnectionComponent } from './user-page/connection/connection.component';
+import { AvisFilmComponent } from './home/avis-film/avis-film.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -23,5 +24,6 @@ export const routes: Routes = [
     { path: 'list-avis/:id', component: ReviewsComponent},
     { path: 'add-avis', component: AddAvisComponent},
     { path: 'edit-avis/:id', component: EditAvisComponent},
-    { path: 'panel-admin', component: AdminComponent }
+    { path: 'panel-admin', component: AdminComponent },
+    { path: 'avis-film/:id', component: AvisFilmComponent}
 ];
